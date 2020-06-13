@@ -1,6 +1,6 @@
 
-
-public class Main {
+// java code to remove duplicates in a single linked list using brute-force technique
+public class BruteForce { 
 	public static class Node
 	{
 		public Node(int d)
@@ -24,10 +24,10 @@ public class Main {
 				ptr2=ptr1;
 				while(ptr2.next != null)
 				{
-					if(ptr2.next.data == ptr1.data)
-					{
-						ptr2.next=ptr2.next.next;
-						System.gc();
+					if(ptr2.next.data == ptr1.data) // found a duplicate
+					{  
+						ptr2.next=ptr2.next.next; // | 5 -> 5 -> 6 | -> | 5 -> 6 |
+						System.gc();  // call the system's garbage collector in order to collect the recently-released node
 					}
 					else
 					{
